@@ -1,5 +1,8 @@
 <script>
 export default {
+  props: {
+    typeOfCalc: Boolean,
+  },
   data() {
     return {
       wagerTooSmall: true,

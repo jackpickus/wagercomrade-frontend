@@ -25,7 +25,7 @@ export default {
       <p>Toggle button to switch between wager and amount you want to win</p>
       <button @click="toggle" :id="buttonToggleId">{{ buttonText }}</button>
     </div>
-    <FormMath />
+    <FormMath :typeOfCalc="this.amountWagered" />
   </div>
 </template>
 
