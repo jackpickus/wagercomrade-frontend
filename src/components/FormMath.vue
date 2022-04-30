@@ -3,8 +3,8 @@ export default {
   data() {
     return {
       wagerTooSmall: true,
-      money: "",
-      odds: "",
+      money: 0,
+      odds: 0,
     };
   },
 };
@@ -15,18 +15,18 @@ export default {
     <form @submit.prevent="">
       <label htmlFor="money">
         Money:
-        <input v-model="money" />
+        <input v-model="money" type="number" />
       </label>
       <label htmlFor="odds">
         Odds:
-        <input v-model="odds" />
+        <input v-model="odds" type="number" />
       </label>
     </form>
     <div>
-      <p v-if="wagerTooSmall">ERROR wager must be 10 cents or more</p>
-      <p v-else>Lets make some money!</p>
-      <p>{{ money }}</p>
-      <p>{{ odds }}</p>
+      <p v-if="money < 0.1">Wager must be 10 cents or more</p>
+      <p v-if="odds > -100 && odds < 100">
+        Odds must be less than -100 or greater than 99
+      </p>
     </div>
   </div>
 </template>
