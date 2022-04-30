@@ -8,6 +8,8 @@ export default {
       wagerTooSmall: true,
       money: 0,
       odds: 0,
+      potentialWinnings: 0,
+      totalPayout: 0,
     };
   },
 };
@@ -31,5 +33,7 @@ export default {
         Odds must be less than -100 or greater than 99
       </p>
     </div>
+    <p>Potential Winnings: {{ potentialWinnings }}</p>
+    <p>Total Payout: {{ totalPayout }}</p>
   </div>
 </template>
