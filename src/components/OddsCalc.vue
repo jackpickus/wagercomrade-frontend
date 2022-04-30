@@ -22,10 +22,6 @@ export default {
       <p>Toggle button to switch between wager and amount you want to win</p>
       <button @click="toggle" :id="buttonToggleId">{{ buttonText }}</button>
     </div>
-    <form @submit.prevent="">
-      <input v-model="addBet" />
-      <button>Submit Wager</button>
-    </form>
   </div>
 </template>
 
