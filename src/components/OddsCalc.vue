@@ -1,5 +1,8 @@
 <script>
+import FormMath from "./FormMath.vue";
+
 export default {
+  components: { FormMath },
   data() {
     return {
       amountWagered: true,
@@ -22,6 +25,7 @@ export default {
       <p>Toggle button to switch between wager and amount you want to win</p>
       <button @click="toggle" :id="buttonToggleId">{{ buttonText }}</button>
     </div>
+    <FormMath />
   </div>
 </template>
 
@@ -39,6 +43,6 @@ export default {
 }
 
 #toggleId:hover {
-  background-color: blueviolet; 
+  background-color: blueviolet;
 }
 </style>
