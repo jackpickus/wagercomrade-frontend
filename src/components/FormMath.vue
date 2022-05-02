@@ -56,8 +56,10 @@ export default {
       <button @click="calculatePayout">Run It</button>
     </form>
     <div>
-      <p v-if="money < 0.1">Wager must be 10 cents or more</p>
-      <p v-if="odds > -100 && odds < 100">
+      <p v-if="money < 0.1" class="inputError">
+        Wager must be 10 cents or more
+      </p>
+      <p v-if="odds > -100 && odds < 100" class="inputError">
         Odds must be less than -100 or greater than 99
       </p>
     </div>

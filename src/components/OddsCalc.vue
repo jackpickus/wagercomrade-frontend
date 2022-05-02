@@ -23,7 +23,9 @@ export default {
   <div class="calculator">
     <div class="flex-container">
       <p>Toggle button to switch between wager and amount you want to win</p>
-      <button @click="toggle" :id="buttonToggleId" type="button">{{ buttonText }}</button>
+      <button @click="toggle" :id="buttonToggleId" type="button">
+        {{ buttonText }}
+      </button>
     </div>
     <FormMath :typeOfCalc="this.amountWagered" />
   </div>
