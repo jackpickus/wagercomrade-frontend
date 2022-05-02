@@ -65,3 +65,9 @@ export default {
     <p>Total Payout: {{ totalPayout }}</p>
   </div>
 </template>
+
+<style scoped>
+.inputError {
+  color: red;
+}
+</style>
