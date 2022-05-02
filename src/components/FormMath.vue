@@ -10,11 +10,19 @@ export default {
       odds: 0,
       potentialWinnings: 0,
       totalPayout: 0,
+      validInput: false,
     };
   },
   methods: {
     calculatePayout() {
       let amount = 0;
+
+      if (this.money >= 0.1 && (this.odds < -100 || this.odds >= 100)) {
+        this.validInput = true;
+      } else {
+        this.validInput = false;
+      }
+
       if (this.odds >= 100) {
         // wager was on underdog
         if (this.typeOfCalc) {
@@ -63,8 +71,11 @@ export default {
         Odds must be less than -100 or greater than 99
       </p>
     </div>
-    <p>Potential Winnings: {{ potentialWinnings }}</p>
-    <p>Total Payout: {{ totalPayout }}</p>
+    <p v-if="potentialWinnings && validInput">
+      The Difference: ${{ potentialWinnings }}
+    </p>
+    <p v-else>Please enter valid numbers</p>
+    <p v-if="totalPayout && validInput">Total Payout: ${{ totalPayout }}</p>
   </div>
 </template>
 
