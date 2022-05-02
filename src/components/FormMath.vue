@@ -47,7 +47,7 @@ export default {
     <form @submit.prevent="">
       <label htmlFor="money">
         Money:
-        <input v-model="money" type="number" />
+        <input v-model="money" />
       </label>
       <label htmlFor="odds">
         Odds:
