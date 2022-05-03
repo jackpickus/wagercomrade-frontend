@@ -1,8 +1,9 @@
 <script>
 import FormMath from "./FormMath.vue";
+import BetForm from "./BetForm.vue";
 
 export default {
-  components: { FormMath },
+  components: { FormMath, BetForm },
   data() {
     return {
       amountWagered: true,
@@ -28,6 +29,7 @@ export default {
       </button>
     </div>
     <FormMath :typeOfCalc="this.amountWagered" />
+    <BetForm />
   </div>
 </template>
 
