@@ -98,7 +98,7 @@ export default {
     <h3>My Bets</h3>
     <div>
       <ul>
-        <li v-for="bet in myBets" :key="bet.id">
+        <li v-for="bet in myBets.slice().reverse()" :key="bet.id">
           {{ bet.theBet }} @ {{ bet.theOdds }} for {{ bet.units }} units
           <p v-if="bet.status == 'Lost'">
             Status:
