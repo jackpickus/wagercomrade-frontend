@@ -62,6 +62,17 @@ export default {
         this.units = "";
       }
     },
+    updateBetStatus(bet, win) {
+      let index = this.myBets.indexOf(bet);
+      if (index > -1) {
+        if (win) {
+          bet.status = "Won";
+        } else {
+          bet.status = "Lost";
+        }
+        console.log(bet.status);
+      }
+    },
   },
 };
 </script>
@@ -100,7 +111,12 @@ export default {
           <p v-if="bet.status == 'Pending'">
             Status:
             <span :class="pendingClass">{{ bet.status }}</span>
-            <button type="button">Update Status</button>
+            <button type="button" @click="updateBetStatus(bet, true)">
+              Won?
+            </button>
+            <button type="button" @click="updateBetStatus(bet, false)">
+              Lost?
+            </button>
           </p>
         </li>
       </ul>
