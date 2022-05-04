@@ -108,16 +108,21 @@ export default {
             Status:
             <span :class="wonClass">{{ bet.status }}</span>
           </p>
-          <p v-if="bet.status == 'Pending'">
+          <div v-if="bet.status == 'Pending'">
             Status:
             <span :class="pendingClass">{{ bet.status }}</span>
+            <p>
+              <span :class="lostClass">CATION!</span> Once you change the status
+              of the bet you cannot change it
+            </p>
+            Update Status:
             <button type="button" @click="updateBetStatus(bet, true)">
               Won?
             </button>
             <button type="button" @click="updateBetStatus(bet, false)">
               Lost?
             </button>
-          </p>
+          </div>
         </li>
       </ul>
     </div>
