@@ -26,13 +26,16 @@ export default {
       if (this.odds >= 100) {
         // wager was on underdog
         if (this.typeOfCalc) {
+          // true when the user has selected "Wager"
           amount = this.money * (this.odds / 100);
         } else {
+          // else they chose amount of money they want to win
           amount = this.money / (this.odds / 100);
         }
       } else {
         // wager was negative odds, chose favorite
         if (this.typeOfCalc) {
+          // true when the user has selected "Wager"
           amount = this.money * (100 / (this.odds * -1));
         } else {
           amount = this.money * ((-1 * this.odds) / 100);
