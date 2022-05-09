@@ -1,5 +1,10 @@
 <script>
 let id = 0;
+const Status = {
+  WON: "Won",
+  LOST: "Lost",
+  PENDING: "Pending",
+};
 export default {
   data() {
     return {
@@ -11,7 +16,7 @@ export default {
       theBet: "",
       theOdds: "",
       units: 0,
-      status: "Pending",
+      status: Status.PENDING,
 
       // dummy data
       myBets: [
@@ -20,7 +25,7 @@ export default {
           theBet: "Suns -4.5",
           theOdds: -110,
           units: 2.2,
-          status: "Won",
+          status: Status.WON,
           date: new Date(),
         },
         {
@@ -28,7 +33,7 @@ export default {
           theBet: "Bulls -5",
           theOdds: -110,
           units: 1.1,
-          status: "Lost",
+          status: Status.LOST,
           date: new Date(),
         },
         {
@@ -36,7 +41,7 @@ export default {
           theBet: "Cubs ML",
           theOdds: 200,
           units: 1,
-          status: "Pending",
+          status: Status.PENDING,
           date: new Date(),
         },
       ],
