@@ -50,6 +50,11 @@ export default {
       },
     };
   },
+  computed: {
+    reversedBets() {
+      return [...this.myBets].reverse();
+    },
+  },
   methods: {
     placeBet() {
       if (this.units >= 0.1) {
@@ -103,7 +108,7 @@ export default {
     <h3>My Bets</h3>
     <div>
       <ul>
-        <li v-for="bet in myBets.slice().reverse()" :key="bet.id">
+        <li v-for="bet in reversedBets" :key="bet.id">
           {{ bet.theBet }} @ {{ bet.theOdds }} for {{ bet.units }} units
           <p v-if="bet.status == 'Lost'">
             Status:
