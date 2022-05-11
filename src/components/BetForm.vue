@@ -54,6 +54,28 @@ export default {
     reversedBets() {
       return [...this.myBets].reverse();
     },
+    calcTotalUnits() {
+      let totalUnits = 0;
+      for (let i = 0; i < this.myBets.length; i++) {
+        let b = this.myBets[i];
+        if (b.status == Status.WON) {
+          totalUnits += b.units;
+        } else if (b.status == Status.LOST) {
+          totalUnits -= b.units;
+        }
+      }
+      return totalUnits;
+    },
+    calcTotalUnitsPending() {
+      let pendingUnits = 0;
+      for (let i = 0; i < this.myBets.length; i++) {
+        let bet = this.myBets[i];
+        if (bet.status == Status.PENDING) {
+          pendingUnits += bet.units;
+        }
+      }
+      return pendingUnits;
+    },
   },
   methods: {
     placeBet() {
@@ -105,6 +127,16 @@ export default {
       </label>
       <button @click="placeBet">Place Bet</button>
     </form>
+    <div>
+      <h3 v-if="calcTotalUnits > 0">
+        Your Units: <span :class="wonClass">{{ calcTotalUnits }}</span>
+      </h3>
+      <h3 v-else-if="calcTotalUnits < 0">
+        Your Units: <span :class="lostClass">{{ calcTotalUnits }}</span>
+      </h3>
+      <h3 v-else>Your Units: {{ calcTotalUnits }}</h3>
+      <p>Units pending: {{ calcTotalUnitsPending }}</p>
+    </div>
     <h3>My Bets</h3>
     <div>
       <ul>
