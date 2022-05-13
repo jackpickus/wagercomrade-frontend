@@ -162,7 +162,12 @@ export default {
     <div>
       <ul>
         <li v-for="bet in reversedBets" :key="bet.id">
-          {{ bet.theBet }} @ {{ bet.theOdds }} for {{ bet.units }} units
+          {{ bet.theBet }} @ {{ bet.theOdds }} for
+          <span v-if="bet.units > 1 || bet.units < 1"
+            >{{ bet.units }} units</span
+          >
+          <span v-else>{{ bet.units }} unit</span>
+          <p>Date Placed: {{ bet.date }}</p>
           <p v-if="bet.status == 'Lost'">
             Status:
             <span :class="lostClass">{{ bet.status }}</span>
@@ -172,6 +177,10 @@ export default {
             <span :class="wonClass">{{ bet.status }}</span>
           </p>
           <div v-if="bet.status == 'Pending'">
+            <p v-if="bet.toWin > 1 || bet.toWin < 1">
+              To Win: {{ bet.toWin }} units
+            </p>
+            <p v-else>To Win: {{ bet.toWin }} unit</p>
             Status:
             <span :class="pendingClass">{{ bet.status }}</span>
             <p>
