@@ -27,6 +27,7 @@ export default {
           units: 2.2,
           status: Status.WON,
           date: new Date(),
+          toWin: this.calculatePayout(2.2, -110),
         },
         {
           id: id++,
@@ -35,6 +36,7 @@ export default {
           units: 1.1,
           status: Status.LOST,
           date: new Date(),
+          toWin: this.calculatePayout(1.1, -110),
         },
         {
           id: id++,
@@ -43,6 +45,7 @@ export default {
           units: 1,
           status: Status.PENDING,
           date: new Date(),
+          toWin: this.calculatePayout(1, 200),
         },
       ],
       styleObject: {
