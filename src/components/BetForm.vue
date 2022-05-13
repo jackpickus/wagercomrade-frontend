@@ -62,12 +62,13 @@ export default {
       for (let i = 0; i < this.myBets.length; i++) {
         let b = this.myBets[i];
         if (b.status == Status.WON) {
-          totalUnits += b.units;
+          totalUnits += b.toWin;
         } else if (b.status == Status.LOST) {
           totalUnits -= b.units;
         }
       }
-      return totalUnits;
+      let roundedTotalUnits = Math.round(totalUnits * 100) / 100;
+      return roundedTotalUnits;
     },
     calcTotalUnitsPending() {
       let pendingUnits = 0;
