@@ -22,6 +22,7 @@ export default {
 
 <template>
   <div class="calculator">
+    <h1>Odds Calculator</h1>
     <div class="flex-container">
       <p>Toggle button to switch between wager and amount you want to win</p>
       <button @click="toggle" :id="buttonToggleId" type="button">
