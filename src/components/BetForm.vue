@@ -170,11 +170,11 @@ export default {
           <p>Date Placed: {{ bet.date }}</p>
           <p v-if="bet.status == 'Lost'">
             Status:
-            <span :class="lostClass">{{ bet.status }}</span>
+            <span :class="lostClass">{{ bet.status }} -{{ bet.units }}U</span>
           </p>
           <p v-if="bet.status == 'Won'">
             Status:
-            <span :class="wonClass">{{ bet.status }}</span>
+            <span :class="wonClass">{{ bet.status }} +{{ bet.toWin }}U</span>
           </p>
           <div v-if="bet.status == 'Pending'">
             <p v-if="bet.toWin > 1 || bet.toWin < 1">
