@@ -14,31 +14,32 @@ export default {
     };
   },
   methods: {
-    calculatePayout() {
+    calculatePayout(odds) {
       let amount = 0;
+      let myOdds = odds;
 
-      if (this.money >= 0.1 && (this.odds < -100 || this.odds >= 100)) {
+      if (this.money >= 0.1 && (myOdds < -100 || myOdds >= 100)) {
         this.validInput = true;
       } else {
         this.validInput = false;
       }
 
-      if (this.odds >= 100) {
+      if (myOdds >= 100) {
         // wager was on underdog
         if (this.typeOfCalc) {
           // true when the user has selected "Wager"
-          amount = this.money * (this.odds / 100);
+          amount = this.money * (myOdds / 100);
         } else {
           // else they chose amount of money they want to win
-          amount = this.money / (this.odds / 100);
+          amount = this.money / (myOdds / 100);
         }
       } else {
         // wager was negative odds, chose favorite
         if (this.typeOfCalc) {
           // true when the user has selected "Wager"
-          amount = this.money * (100 / (this.odds * -1));
+          amount = this.money * (100 / (myOdds * -1));
         } else {
-          amount = this.money * ((-1 * this.odds) / 100);
+          amount = this.money * ((-1 * myOdds) / 100);
         }
       }
       let roundedAmount = Math.round(amount * 100) / 100;
@@ -64,7 +65,7 @@ export default {
         Odds:
         <input v-model="odds" type="number" />
       </label>
-      <button @click="calculatePayout">Run It</button>
+      <button @click="calculatePayout(this.odds)">Run It</button>
     </form>
     <div>
       <p v-if="money < 0.1" class="inputError">
