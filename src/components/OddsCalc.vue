@@ -35,6 +35,9 @@ export default {
 </template>
 
 <style scoped>
+h1 {
+  margin-bottom: 0px;
+}
 .flex-container {
   display: flex;
   margin: 5px;
