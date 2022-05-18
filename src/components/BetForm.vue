@@ -197,6 +197,7 @@ export default {
             </button>
             <button type="button" @click="bet.status = 'Void'">Void?</button>
           </div>
+          <div v-else>Status: {{ bet.status }}</div>
         </li>
       </ul>
     </div>
