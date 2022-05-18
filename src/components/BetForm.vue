@@ -195,6 +195,7 @@ export default {
             <button type="button" @click="updateBetStatus(bet, false)">
               Lost?
             </button>
+            <button type="button" @click="bet.status = 'Void'">Void?</button>
           </div>
         </li>
       </ul>
