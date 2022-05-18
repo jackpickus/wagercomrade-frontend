@@ -4,6 +4,7 @@ const Status = {
   WON: "Won",
   LOST: "Lost",
   PENDING: "Pending",
+  VOID: "Void",
 };
 export default {
   data() {
