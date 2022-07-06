@@ -19,7 +19,6 @@ export default {
       theOdds: "",
       units: 0,
       status: Status.PENDING,
-
       // dummy data
       myBets: [
         {
@@ -97,7 +96,6 @@ export default {
       let myUnits = units;
       let myOdds = odds;
       let amount = 0;
-
       if (myOdds >= 100) {
         // wager was on underdog
         amount = myUnits * (myOdds / 100);
