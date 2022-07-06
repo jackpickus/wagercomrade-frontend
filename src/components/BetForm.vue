@@ -12,7 +12,6 @@ export default {
     return {
       lostClass: "lostTextClass",
       wonClass: "wonTextClass",
-      pendingClass: "pendingTextClass",
 
       id: id,
       theBet: "",
