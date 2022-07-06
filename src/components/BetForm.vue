@@ -212,17 +212,3 @@ export default {
     </div>
   </div>
 </template>
-
-<style scoped>
-.pendingTextClass {
-  color: orange;
-}
-
-.wonTextClass {
-  color: green;
-}
-
-.lostTextClass {
-  color: red;
-}
-</style>
