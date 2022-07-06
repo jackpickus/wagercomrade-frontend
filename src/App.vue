@@ -7,3 +7,17 @@ import OddsCalc from "./components/OddsCalc.vue";
     <OddsCalc />
   </main>
 </template>
+
+<style>
+.pendingTextClass {
+  color: orange;
+}
+
+.wonTextClass {
+  color: green;
+}
+
+.lostTextClass {
+  color: red;
+}
+</style>
