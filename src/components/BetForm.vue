@@ -1,4 +1,5 @@
 <script>
+import MyBet from "./MyBet.vue";
 let id = 0;
 const Status = {
   WON: "Won",
@@ -137,6 +138,7 @@ export default {
       }
     },
   },
+  components: { MyBet },
 };
 </script>
 
