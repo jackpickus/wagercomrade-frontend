@@ -131,6 +131,15 @@ export default {
         console.log(bet.status);
       }
     },
+    deleteBet(betId) {
+      const index = this.myBets.indexOf(betId)
+      console.log("This is the index: " + index);
+      if (index > -1) {
+        // only splice array when item is found
+        this.myBets.splice(index, 1); // 2nd parameter means remove one item only
+        console.log("Successfully deleted item");
+      }
+    },
   },
   components: { MyBet },
 };
