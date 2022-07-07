@@ -57,9 +57,6 @@ export default {
           toWin: this.calculatePayout(1, 200),
         },
       ],
-      styleObject: {
-        color: "red",
-      },
     };
   },
   computed: {
