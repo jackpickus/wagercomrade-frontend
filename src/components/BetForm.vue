@@ -132,11 +132,15 @@ export default {
       }
     },
     deleteBet(betId) {
-      const index = this.myBets.indexOf(betId)
+      const index = this.myBets.indexOf(betId);
       console.log("This is the index: " + index);
       if (index > -1) {
-        // only splice array when item is found
-        this.myBets.splice(index, 1); // 2nd parameter means remove one item only
+        if (betId.status == "Pending") {
+          this.calcTotalUnitsPending;
+        } else {
+          this.calcTotalUnits;
+        }
+        this.myBets.splice(index, 1);
         console.log("Successfully deleted item");
       }
     },
