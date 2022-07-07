@@ -186,6 +186,7 @@ export default {
             :date="bet.date"
             :toWin="bet.toWin"
           />
+          <button type="button" @click="deleteBet(bet)">Delete Bet</button>
           <!-- TODO: Make PUT call to update bet status -->
           <div v-if="bet.status == 'Pending'">
             Update Status:
