@@ -45,5 +45,6 @@ export default {
         the bet you cannot change it
       </p>
     </div>
+    <div v-if="betStatus == 'Void'">Status: {{ betStatus }}</div>
   </div>
 </template>
