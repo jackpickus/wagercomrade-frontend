@@ -1,5 +1,5 @@
 <script>
-import createNewBet from "../services/BetService";
+import createNewBet, { deleteBet, updateBet } from "../services/BetService";
 import MyBet from "./MyBet.vue";
 let id = 1;
 const Status = {
