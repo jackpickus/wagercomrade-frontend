@@ -6,7 +6,7 @@ export default {
     theOdds: Number,
     units: Number,
     betStatus: String,
-    date: Date,
+    timePlaced: Date,
     toWin: Number,
   },
   data() {
@@ -26,7 +26,7 @@ export default {
       <span v-if="units > 1 || units < 1">{{ units }} units</span>
       <span v-else>{{ units }} unit</span>
     </p>
-    <p>Date Placed: {{ date }}</p>
+    <p>Date Placed: {{ timePlaced }}</p>
     <p v-if="betStatus == 'LOST'">
       Status:
       <span :class="lostClass">{{ betStatus }} -{{ units }}U</span>

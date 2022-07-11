@@ -27,7 +27,7 @@ export default {
           theOdds: -110,
           units: 2.2,
           status: Status.WON,
-          date: new Date(),
+          timePlaced: new Date(),
           toWin: this.calculatePayout(2.2, -110),
         },
         {
@@ -36,7 +36,7 @@ export default {
           theOdds: -110,
           units: 1.1,
           status: Status.LOST,
-          date: new Date(),
+          timePlaced: new Date(),
           toWin: this.calculatePayout(1.1, -110),
         },
         {
@@ -45,7 +45,7 @@ export default {
           theOdds: -110,
           units: 1.1,
           status: Status.VOID,
-          date: new Date(),
+          timePlaced: new Date(),
           toWin: this.calculatePayout(1.1, -110),
         },
         {
@@ -54,7 +54,7 @@ export default {
           theOdds: 200,
           units: 1,
           status: Status.PENDING,
-          date: new Date(),
+          timePlaced: new Date(),
           toWin: this.calculatePayout(1, 200),
         },
       ],
@@ -112,7 +112,7 @@ export default {
           theOdds: this.theOdds,
           units: this.units,
           status: this.status,
-          date: new Date(),
+          timePlaced: new Date(),
           toWin: this.calculatePayout(this.units, this.theOdds),
         };
 
@@ -191,7 +191,7 @@ export default {
             :theOdds="bet.theOdds"
             :units="bet.units"
             :betStatus="bet.status"
-            :date="bet.date"
+            :timePlaced="bet.timePlaced"
             :toWin="bet.toWin"
           />
           <button type="button" @click="deleteBet(bet)">Delete Bet</button>
