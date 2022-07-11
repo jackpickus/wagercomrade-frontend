@@ -115,7 +115,10 @@ export default {
           date: new Date(),
           toWin: this.calculatePayout(this.units, this.theOdds),
         };
+
         this.myBets.push(newBet);
+        createNewBet(newBet);
+
         this.theBet = "";
         this.theOdds = "";
         this.units = "";
