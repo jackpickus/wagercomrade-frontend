@@ -193,7 +193,7 @@ export default {
           />
           <button type="button" @click="deleteBet(bet)">Delete Bet</button>
           <!-- TODO: Make PUT call to update bet status -->
-          <div v-if="bet.status == 'Pending'">
+          <div v-if="bet.status == 'PENDING'">
             Update Status:
             <button type="button" @click="updateBetStatus(bet, true)">
               Won?
