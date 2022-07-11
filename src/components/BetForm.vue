@@ -146,6 +146,7 @@ export default {
           this.calcTotalUnits;
         }
         this.myBets.splice(index, 1);
+        deleteBet(betId.id);
         console.log("Successfully deleted item");
       }
     },
