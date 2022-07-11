@@ -1,4 +1,5 @@
 <script>
+import createNewBet from "../services/BetService";
 import MyBet from "./MyBet.vue";
 let id = 0;
 const Status = {
