@@ -1,7 +1,7 @@
 <script>
 import createNewBet from "../services/BetService";
 import MyBet from "./MyBet.vue";
-let id = 0;
+let id = 1;
 const Status = {
   WON: "WON",
   LOST: "LOST",
