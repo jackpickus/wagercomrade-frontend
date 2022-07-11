@@ -27,15 +27,15 @@ export default {
       <span v-else>{{ units }} unit</span>
     </p>
     <p>Date Placed: {{ date }}</p>
-    <p v-if="betStatus == 'Lost'">
+    <p v-if="betStatus == 'LOST'">
       Status:
       <span :class="lostClass">{{ betStatus }} -{{ units }}U</span>
     </p>
-    <p v-if="betStatus == 'Won'">
+    <p v-if="betStatus == 'WON'">
       Status:
       <span :class="wonClass">{{ betStatus }} +{{ toWin }}U</span>
     </p>
-    <div v-if="betStatus == 'Pending'">
+    <div v-if="betStatus == 'PENDING'">
       <p v-if="toWin > 1 || toWin < 1">To Win: {{ toWin }} units</p>
       <p v-else>To Win: {{ toWin }} unit</p>
       Status:
@@ -45,6 +45,6 @@ export default {
         the bet you cannot change it
       </p>
     </div>
-    <div v-if="betStatus == 'Void'">Status: {{ betStatus }}</div>
+    <div v-if="betStatus == 'VOID'">Status: {{ betStatus }}</div>
   </div>
 </template>

@@ -2,10 +2,10 @@
 import MyBet from "./MyBet.vue";
 let id = 0;
 const Status = {
-  WON: "Won",
-  LOST: "Lost",
-  PENDING: "Pending",
-  VOID: "Void",
+  WON: "WON",
+  LOST: "LOST",
+  PENDING: "PENDING",
+  VOID: "VOID",
 };
 export default {
   data() {
