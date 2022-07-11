@@ -1,7 +1,7 @@
-const api = "http://localhost:8080/api/v1/wager";
+const API_URL = "http://localhost:8080/api/v1/wager";
 
 export default function createNewBet(data) {
-  fetch("http://localhost:8080/api/v1/wager", {
+  fetch(API_URL, {
     method: "POST",
     headers: {
       "Content-Type": "application/json;charset=utf-8",
@@ -23,7 +23,8 @@ export async function getAllBets() {
 }
 
 export function updateBet(betId, betStatus) {
-  fetch(api + `/${betId}?status=${betStatus}`, {
+  const url = `${API_URL}/${betId}?status=${betStatus}`;
+  fetch(url, {
     method: "PUT",
     headers: {
       "Content-Type": "application/json;charset=utf-8",
@@ -39,7 +40,8 @@ export function updateBet(betId, betStatus) {
 }
 
 export function deleteBet(betId) {
-  fetch(api + `/${betId}`, {
+  const url = `${API_URL}/${betId}`;
+  fetch(url, {
     method: "DELETE",
     headers: {
       "Content-Type": "application/json;charset=utf-8",
