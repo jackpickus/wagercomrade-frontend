@@ -128,11 +128,12 @@ export default {
       let index = this.myBets.indexOf(bet);
       if (index > -1) {
         if (win) {
-          bet.status = "Won";
+          bet.status = "WON";
         } else {
-          bet.status = "Lost";
+          bet.status = "LOST";
         }
         console.log(bet.status);
+        updateBet(bet.id, bet.status);
       }
     },
     deleteBet(betId) {
