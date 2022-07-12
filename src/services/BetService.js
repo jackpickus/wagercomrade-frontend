@@ -17,11 +17,6 @@ export default function createNewBet(data) {
     });
 }
 
-export async function getAllBets() {
-  const response = await fetch(api);
-  return await response.json();
-}
-
 export function updateBet(betId, betStatus) {
   const url = `${API_URL}/${betId}?status=${betStatus}`;
   fetch(url, {
