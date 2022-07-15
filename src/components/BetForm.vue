@@ -14,7 +14,6 @@ export default {
       lostClass: "lostTextClass",
       wonClass: "wonTextClass",
 
-      id: id,
       theBet: "",
       theOdds: "",
       units: 0,
