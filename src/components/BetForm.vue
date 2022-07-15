@@ -18,17 +18,11 @@ export default {
       theOdds: "",
       units: 0,
       status: Status.PENDING,
-      // dummy data
-      myBets: [
-        {
-          id: id++,
-          theBet: "Suns -4.5",
-          theOdds: -110,
-          units: 2.2,
-          status: Status.WON,
-          timePlaced: new Date(),
-          toWin: this.calculatePayout(2.2, -110),
-        },
+
+      loadedData: null,
+      myBets: [],
+    };
+  },
         {
           id: id++,
           theBet: "Bulls -5",
