@@ -81,7 +81,6 @@ export default {
     placeBet() {
       if (this.units >= 0.1) {
         let newBet = {
-          id: id++,
           theBet: this.theBet,
           theOdds: this.theOdds,
           units: this.units,
