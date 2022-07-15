@@ -89,8 +89,22 @@ export default {
           toWin: this.calculatePayout(this.units, this.theOdds),
         };
 
-        this.myBets.push(newBet);
-        createNewBet(newBet);
+        fetch(API_URL, {
+          method: "POST",
+          headers: {
+            "Content-Type": "application/json;charset=utf-8",
+          },
+          body: JSON.stringify(newBet),
+        })
+          .then((response) => response.json())
+          .then((data) => {
+            console.log("Success:", data);
+            newBet.id = data.wagerIdNumber;
+            this.myBets.push(newBet);
+          })
+          .catch((error) => {
+            console.log("Error: on POST:", error);
+          });
 
         this.theBet = "";
         this.theOdds = "";
