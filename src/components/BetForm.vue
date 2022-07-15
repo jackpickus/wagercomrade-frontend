@@ -1,5 +1,5 @@
 <script>
-import createNewBet, { deleteBet, updateBet } from "../services/BetService";
+import { deleteBet, updateBet } from "../services/BetService";
 import MyBet from "./MyBet.vue";
 const API_URL = "http://localhost:8080/api/v1/wager";
 const Status = {
