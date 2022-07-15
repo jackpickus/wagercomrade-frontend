@@ -23,35 +23,8 @@ export default {
       myBets: [],
     };
   },
-        {
-          id: id++,
-          theBet: "Bulls -5",
-          theOdds: -110,
-          units: 1.1,
-          status: Status.LOST,
-          timePlaced: new Date(),
-          toWin: this.calculatePayout(1.1, -110),
-        },
-        {
-          id: id++,
-          theBet: "White Sox -1.5",
-          theOdds: -110,
-          units: 1.1,
-          status: Status.VOID,
-          timePlaced: new Date(),
-          toWin: this.calculatePayout(1.1, -110),
-        },
-        {
-          id: id++,
-          theBet: "Cubs ML",
-          theOdds: 200,
-          units: 1,
-          status: Status.PENDING,
-          timePlaced: new Date(),
-          toWin: this.calculatePayout(1, 200),
-        },
-      ],
-    };
+  created() {
+    this.fetchData();
   },
   computed: {
     reversedBets() {
