@@ -13,7 +13,7 @@ export default function createNewBet(data) {
       console.log("Success:", data);
     })
     .catch((error) => {
-      console.log("Error:", error);
+      console.log("Error: on POST:", error);
     });
 }
 
@@ -47,6 +47,6 @@ export function deleteBet(betId) {
       console.log("Successfully deleted bet:", data);
     })
     .catch((error) => {
-      console.log("Error on delete:", error);
+      console.log("Error on DELETE:", error);
     });
 }
