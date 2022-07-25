@@ -80,12 +80,14 @@ export default {
     },
     placeBet() {
       if (this.units >= 0.1) {
+        let d = new Date();
+
         let newBet = {
           theBet: this.theBet,
           theOdds: this.theOdds,
           units: this.units,
           status: this.status,
-          timePlaced: new Date(),
+          timePlaced: d,
           toWin: this.calculatePayout(this.units, this.theOdds),
         };
 
