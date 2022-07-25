@@ -6,7 +6,7 @@ export default {
     theOdds: Number,
     units: Number,
     betStatus: String,
-    timePlaced: Date,
+    timePlaced: String,
     toWin: Number,
   },
   data() {
@@ -15,6 +15,12 @@ export default {
       wonClass: "wonTextClass",
       pendingClass: "pendingTextClass",
     };
+  },
+  methods: {
+    makeDate(betDate) {
+      let myDate = new Date(betDate);
+      return myDate;
+    },
   },
 };
 </script>
@@ -26,7 +32,7 @@ export default {
       <span v-if="units > 1 || units < 1">{{ units }} units</span>
       <span v-else>{{ units }} unit</span>
     </p>
-    <p>Date Placed: {{ timePlaced }}</p>
+    <p>Date Placed: {{ makeDate(timePlaced) }}</p>
     <p v-if="betStatus == 'LOST'">
       Status:
       <span :class="lostClass">{{ betStatus }} -{{ units }}U</span>
