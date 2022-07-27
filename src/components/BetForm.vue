@@ -62,6 +62,7 @@ export default {
         this.myBets.push(this.loadedData[x]);
         x++;
       }
+      this.myBets.sort((a, b) => parseFloat(a.id) - parseFloat(b.id));
     },
     calculatePayout(units, odds) {
       let myUnits = units;
