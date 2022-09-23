@@ -1,23 +1,5 @@
-<script setup>
-import OddsCalc from "./components/OddsCalc.vue";
-</script>
-
 <template>
-  <main>
-    <OddsCalc />
-  </main>
+  <router-link to="/">Home</router-link> |
+  <router-link to="/about">About</router-link>
+  <router-view></router-view>
 </template>
-
-<style>
-.pendingTextClass {
-  color: orange;
-}
-
-.wonTextClass {
-  color: green;
-}
-
-.lostTextClass {
-  color: red;
-}
-</style>
