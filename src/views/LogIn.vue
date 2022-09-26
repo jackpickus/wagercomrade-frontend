@@ -8,3 +8,14 @@
     </form>
   </div>
 </template>
+
+<style>
+label {
+  display: block;
+  margin-bottom: 10px;
+}
+
+input {
+  margin-left: 3px;
+}
+</style>
