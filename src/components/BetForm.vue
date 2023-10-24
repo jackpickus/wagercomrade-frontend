@@ -56,7 +56,7 @@ export default {
   },
   methods: {
     async fetchData() {
-      this.loadedData = await (await fetch(API_URL)).json();
+      this.loadedData = await (await fetch(API_URL + "/wagerlist")).json();
       let x = 0;
       while (x < this.loadedData.length) {
         this.myBets.push(this.loadedData[x]);
