@@ -56,22 +56,34 @@ export default {
 
 <template>
   <div>
-    <form @submit.prevent="">
-      <label htmlFor="money">
+    <form @submit.prevent="" class="flex justify-center mb-4">
+      <label htmlFor="money" class="mr-6 mb-0">
         Money:
-        <input v-model="money" />
+        <input
+          v-model="money"
+          class="border-2 rounded-xl border-zinc-500 px-2 focus:border-emerald-600 focus:outline-none"
+        />
       </label>
-      <label htmlFor="odds">
+      <label htmlFor="odds" class="mx-2 mb-0">
         Odds:
-        <input v-model="odds" type="number" />
+        <input
+          v-model="odds"
+          type="number"
+          class="border-2 rounded-xl border-zinc-500 px-2 focus:border-emerald-600 focus:outline-none"
+        />
       </label>
-      <button @click="calculatePayout(this.odds)">Run It</button>
+      <button
+        @click="calculatePayout(this.odds)"
+        class="border-solid border-2 rounded-lg border-violet-600 hover:border-dotted ml-1 px-4 pb-0 focus:border-emerald-600"
+      >
+        Run It
+      </button>
     </form>
-    <div>
-      <p v-if="money < 0.1" class="inputError">
+    <div class="text-center">
+      <p v-if="money < 0.1" class="text-red-600">
         Wager must be 10 cents or more
       </p>
-      <p v-if="odds > -100 && odds < 100" class="inputError">
+      <p v-if="odds > -100 && odds < 100" class="text-red-600">
         Odds must be less than -100 or greater than 99
       </p>
     </div>
@@ -82,9 +94,3 @@ export default {
     <p v-if="totalPayout && validInput">Total Payout: ${{ totalPayout }}</p>
   </div>
 </template>
-
-<style scoped>
-.inputError {
-  color: red;
-}
-</style>

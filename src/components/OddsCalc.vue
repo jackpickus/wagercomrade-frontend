@@ -22,35 +22,20 @@ export default {
 
 <template>
   <div class="calculator">
-    <h1>Odds Calculator</h1>
-    <div class="flex-container">
-      <p>Toggle button to switch between wager and amount you want to win</p>
-      <button @click="toggle" :id="buttonToggleId" type="button">
-        {{ buttonText }}
-      </button>
+    <div class="items-center">
+      <h1 class="text-3xl font-bold underline text-center">Odds Calculator</h1>
+      <div class="flex items-center justify-center mx-1 my-1 px-1 py-1">
+        <p>Toggle button to switch between wager and amount you want to win</p>
+        <button
+          @click="toggle"
+          type="button"
+          class="w-36 rounded-full text-white m-3 bg-green-600 hover:bg-violet-600"
+        >
+          {{ buttonText }}
+        </button>
+      </div>
     </div>
     <FormMath :typeOfCalc="this.amountWagered" />
     <BetForm />
   </div>
 </template>
-
-<style scoped>
-h1 {
-  margin-bottom: 0px;
-}
-.flex-container {
-  display: flex;
-  margin: 5px;
-  padding: 5px;
-}
-
-#toggleId {
-  margin: 15px;
-  background-color: green;
-  color: ivory;
-}
-
-#toggleId:hover {
-  background-color: blueviolet;
-}
-</style>
