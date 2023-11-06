@@ -64,7 +64,7 @@ export default {
           class="border-2 rounded-xl border-zinc-500 px-2 focus:border-emerald-600 focus:outline-none"
         />
       </label>
-      <label htmlFor="odds" class="mx-2 mb-0">
+      <label htmlFor="odds" class="mr-1 ml-2 mb-0">
         Odds:
         <input
           v-model="odds"
@@ -80,17 +80,17 @@ export default {
       </button>
     </form>
     <div class="text-center">
-      <p v-if="money < 0.1" class="text-red-600">
+      <p v-if="money < 0.1" class="text-red-600 font-semibold">
         Wager must be 10 cents or more
       </p>
-      <p v-if="odds > -100 && odds < 100" class="text-red-600">
+      <p v-if="odds > -100 && odds < 100" class="text-red-600 font-semibold">
         Odds must be less than -100 or greater than 99
       </p>
+      <p v-if="potentialWinnings && validInput">
+        The Difference: ${{ potentialWinnings }}
+      </p>
+      <p v-else>Please enter valid numbers</p>
+      <p v-if="totalPayout && validInput">Total Payout: ${{ totalPayout }}</p>
     </div>
-    <p v-if="potentialWinnings && validInput">
-      The Difference: ${{ potentialWinnings }}
-    </p>
-    <p v-else>Please enter valid numbers</p>
-    <p v-if="totalPayout && validInput">Total Payout: ${{ totalPayout }}</p>
   </div>
 </template>
