@@ -55,8 +55,10 @@ export default {
 </script>
 
 <template>
-  <div>
-    <form @submit.prevent="" class="flex justify-center mb-4">
+  <div
+    class="border-zinc-500 md:border-2 rounded-md w-2/4 px-2 py-2 inset-x-0 mx-auto"
+  >
+    <form @submit.prevent="" class="flex justify-center mb-4 mx-0">
       <label htmlFor="money" class="mr-6 mb-0">
         Money:
         <input
@@ -74,7 +76,7 @@ export default {
       </label>
       <button
         @click="calculatePayout(this.odds)"
-        class="border-solid border-2 rounded-lg border-violet-600 hover:border-dotted ml-1 px-4 pb-0 focus:border-emerald-600"
+        class="border-solid border-2 rounded-lg border-violet-600 hover:border-dotted ml-4 px-4 pb-0 focus:border-emerald-600"
       >
         Run It
       </button>
