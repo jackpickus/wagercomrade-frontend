@@ -146,34 +146,72 @@ export default {
 </script>
 
 <template>
-  <h1>My Wager Tracker</h1>
+  <h1 class="text-4xl font-bold underline text-center p-2">My Wager Tracker</h1>
   <div>
-    <form @submit.prevent="">
-      <label htmlFor="theBet">
-        The Bet:
-        <input v-model="theBet" type="text" placeholder="e.g. Bulls -5" />
-      </label>
-      <label htmlFor="theOdds">
-        The Odds:
-        <input v-model="theOdds" type="number" placeholder="-110" />
-      </label>
-      <label htmlFor="units">
-        Units:
-        <input v-model="units" type="number" placeholder="1" />
-      </label>
-      <button @click="placeBet">Place Bet</button>
+    <form
+      @submit.prevent=""
+      class="border-zinc-500 md:border-2 rounded-md w-2/4 p-2 inset-x-0 mx-auto"
+    >
+      <div class="flex justify-center mb-0 mx-0">
+        <label htmlFor="theBet" class="p-2">
+          The Bet
+          <input
+            v-model="theBet"
+            type="text"
+            placeholder="e.g. Bulls -5"
+            class="border-2 rounded-xl border-zinc-500 px-2 focus:border-emerald-600 focus:outline-none"
+          />
+        </label>
+        <label htmlFor="theOdds" class="p-2">
+          The Odds
+          <input
+            v-model="theOdds"
+            type="number"
+            placeholder="-110"
+            class="border-2 rounded-xl border-zinc-500 px-2 focus:border-emerald-600 focus:outline-none"
+          />
+        </label>
+        <label htmlFor="units" class="p-2">
+          Units
+          <input
+            v-model="units"
+            type="number"
+            placeholder="1"
+            class="border-2 rounded-xl border-zinc-500 px-2 focus:border-emerald-600 focus:outline-none"
+          />
+        </label>
+      </div>
+      <div class="flex justify-center">
+        <button
+          @click="placeBet"
+          class="w-36 h-10 rounded-full text-white m-3 bg-green-600 hover:bg-violet-600 focus:outline-none focus:ring focus:ring-violet-300"
+        >
+          Place Bet
+        </button>
+      </div>
     </form>
-    <div>
-      <h3 v-if="calcTotalUnits > 0">
-        Your Units: <span :class="wonClass">{{ calcTotalUnits }}</span>
-      </h3>
-      <h3 v-else-if="calcTotalUnits < 0">
-        Your Units: <span :class="lostClass">{{ calcTotalUnits }}</span>
-      </h3>
-      <h3 v-else>Your Units: {{ calcTotalUnits }}</h3>
-      <p>Units pending: {{ calcTotalUnitsPending }}</p>
+    <h3 class="font-semibold text-2xl underline text-center">My Bets</h3>
+    <div class="text-center p-2">
+      <div class="inline-block text-left">
+        <h6
+          v-if="calcTotalUnits > 0"
+          class="text-lg font-semibold text-emerald-600"
+        >
+          <!-- TODO REMOVE THE CLASSES wonClass and lostClass -->
+          Units: <span :class="wonClass">{{ calcTotalUnits }}</span>
+        </h6>
+        <h6
+          v-else-if="calcTotalUnits < 0"
+          class="text-lg font-semibold text-red-600"
+        >
+          Units: <span :class="lostClass">{{ calcTotalUnits }}</span>
+        </h6>
+        <h6 v-else class="text-lg font-semibold">
+          Units: {{ calcTotalUnits }}
+        </h6>
+        <p>Units Pending: {{ calcTotalUnitsPending }}</p>
+      </div>
     </div>
-    <h3>My Bets</h3>
     <div>
       <ul>
         <li v-for="bet in reversedBets" :key="bet.id">
