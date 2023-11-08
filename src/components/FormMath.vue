@@ -76,7 +76,7 @@ export default {
       </label>
       <button
         @click="calculatePayout(this.odds)"
-        class="border-solid border-2 rounded-lg border-violet-600 hover:border-dotted ml-4 px-4 pb-0 focus:border-emerald-600"
+        class="border-solid border-2 rounded-lg bg-violet-600 text-white hover:border-dotted ml-4 px-4 pb-0 focus:bg-emerald-600"
       >
         Run It
       </button>

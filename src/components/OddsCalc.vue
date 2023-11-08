@@ -23,7 +23,7 @@ export default {
 <template>
   <div class="calculator">
     <div class="items-center">
-      <h1 class="text-3xl font-bold underline text-center">Odds Calculator</h1>
+      <h1 class="text-4xl font-bold underline text-center">Odds Calculator</h1>
       <div class="flex items-center justify-center mx-1 my-1 px-1 py-1">
         <p>Toggle button to switch between wager and amount you want to win</p>
         <button
