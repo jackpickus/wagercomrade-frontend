@@ -146,7 +146,7 @@ export default {
 </script>
 
 <template>
-  <h1 class="text-4xl font-bold underline text-center p-2">My Wager Tracker</h1>
+  <h1 class="text-4xl font-bold underline text-center px-4 py-6">My Wager Tracker</h1>
   <div>
     <form
       @submit.prevent=""
@@ -190,7 +190,7 @@ export default {
         </button>
       </div>
     </form>
-    <h3 class="font-semibold text-2xl underline text-center">My Bets</h3>
+    <h3 class="font-semibold text-2xl underline text-center pt-4">My Bets</h3>
     <div class="text-center p-2">
       <div class="inline-block text-left">
         <h6
@@ -212,6 +212,7 @@ export default {
         <p>Units Pending: {{ calcTotalUnitsPending }}</p>
       </div>
     </div>
+    <!-- TODO GET DATA TO STYLE LIST OF BETS -->
     <div>
       <ul>
         <li v-for="bet in reversedBets" :key="bet.id">
