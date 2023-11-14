@@ -1,4 +1,5 @@
 <script>
+import { format, parseISO } from "date-fns";
 export default {
   props: {
     id: Number,
@@ -14,6 +15,8 @@ export default {
       lostClass: "lostTextClass",
       wonClass: "wonTextClass",
       pendingClass: "pendingTextClass",
+      format,
+      parseISO,
     };
   },
   methods: {
@@ -32,7 +35,9 @@ export default {
       <span v-if="units > 1 || units < 1">{{ units }} units</span>
       <span v-else>{{ units }} unit</span>
     </p>
-    <p>Date Placed: {{ makeDate(timePlaced) }}</p>
+    <p>
+      Date Placed: {{ format(parseISO(timePlaced), "MMM d, yyyy h:mm aa") }}
+    </p>
     <p v-if="betStatus == 'LOST'">
       Status:
       <span :class="lostClass">{{ betStatus }} -{{ units }}U</span>

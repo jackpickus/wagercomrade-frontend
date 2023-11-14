@@ -146,7 +146,9 @@ export default {
 </script>
 
 <template>
-  <h1 class="text-4xl font-bold underline text-center px-4 py-6">My Wager Tracker</h1>
+  <h1 class="text-4xl font-bold underline text-center px-4 py-6">
+    My Wager Tracker
+  </h1>
   <div>
     <form
       @submit.prevent=""
@@ -213,7 +215,7 @@ export default {
       </div>
     </div>
     <!-- TODO GET DATA TO STYLE LIST OF BETS -->
-    <div>
+    <div class="flex justify-center">
       <ul>
         <li v-for="bet in reversedBets" :key="bet.id">
           <MyBet
