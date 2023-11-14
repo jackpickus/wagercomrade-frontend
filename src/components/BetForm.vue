@@ -214,10 +214,13 @@ export default {
         <p>Units Pending: {{ calcTotalUnitsPending }}</p>
       </div>
     </div>
-    <!-- TODO GET DATA TO STYLE LIST OF BETS -->
-    <div class="flex justify-center">
+    <div>
       <ul>
-        <li v-for="bet in reversedBets" :key="bet.id">
+        <li
+          v-for="bet in reversedBets"
+          :key="bet.id"
+          class="p-2 flex justify-center"
+        >
           <MyBet
             :id="bet.id"
             :theBet="bet.theBet"
@@ -227,18 +230,19 @@ export default {
             :timePlaced="bet.timePlaced"
             :toWin="bet.toWin"
           />
-          <button type="button" @click="deleteBet(bet)">Delete Bet</button>
+          <!-- TODO CREATE EDIT BET PAGE -->
+          <!-- <button type="button" @click="deleteBet(bet)">Edit Bet</button> -->
           <!-- TODO: Make PUT call to update bet status -->
-          <div v-if="bet.status == 'PENDING'">
-            Update Status:
-            <button type="button" @click="updateBetStatus(bet, true)">
-              Won?
-            </button>
-            <button type="button" @click="updateBetStatus(bet, false)">
-              Lost?
-            </button>
-            <button type="button" @click="bet.status = 'Void'">Void?</button>
-          </div>
+          <!-- <div v-if="bet.status == 'PENDING'">
+          Update Status:
+          <button type="button" @click="updateBetStatus(bet, true)">
+            Won?
+          </button>
+          <button type="button" @click="updateBetStatus(bet, false)">
+            Lost?
+          </button>
+          <button type="button" @click="bet.status = 'Void'">Void?</button>
+        </div> -->
         </li>
       </ul>
     </div>
