@@ -17,21 +17,6 @@ export default function createNewBet(data) {
     });
 }
 
-export function getBet(data) {
-  fetch(API_URL, {
-    method: "GET",
-    headers: {
-      "Content-Type": "application/json;charset=utf-8",
-    },
-    body: JSON.stringify(data),
-  })
-    .then((res) => res.json())
-    .then(console.log("Success getBet!"))
-    .catch((error) => {
-      console.log("Error on getBet: ", error);
-    });
-}
-
 export function updateBet(betId, betStatus) {
   const url = `${API_URL}/${betId}?status=${betStatus}`;
   fetch(url, {

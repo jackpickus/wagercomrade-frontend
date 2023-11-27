@@ -215,21 +215,22 @@ export default {
       </div>
     </div>
     <div>
-      <ul>
-        <li
-          v-for="bet in reversedBets"
-          :key="bet.id"
-          class="p-2 flex justify-center"
-        >
-          <MyBet
-            :id="bet.id"
-            :theBet="bet.theBet"
-            :theOdds="bet.theOdds"
-            :units="bet.units"
-            :betStatus="bet.status"
-            :timePlaced="bet.timePlaced"
-            :toWin="bet.toWin"
-          />
+      <ul class="divide-y divide-zinc-500">
+        <li v-for="bet in reversedBets" :key="bet.id">
+          <router-link
+            :to="`/wager/${bet.id}`"
+            class="flex justify-center hover:bg-violet-200"
+          >
+            <MyBet
+              :id="bet.id"
+              :theBet="bet.theBet"
+              :theOdds="bet.theOdds"
+              :units="bet.units"
+              :betStatus="bet.status"
+              :timePlaced="bet.timePlaced"
+              :toWin="bet.toWin"
+            />
+          </router-link>
           <!-- TODO CREATE EDIT BET PAGE -->
           <!-- <button type="button" @click="deleteBet(bet)">Edit Bet</button> -->
           <!-- TODO: Make PUT call to update bet status -->
