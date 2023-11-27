@@ -1,5 +1,7 @@
 <script>
 import { format, parseISO } from "date-fns";
+import { getBet } from "../services/BetService";
+const API_URL = "http://localhost:8080/api/v1/wager";
 export default {
   props: {
     id: Number,
@@ -24,19 +26,25 @@ export default {
       let myDate = new Date(betDate);
       return myDate;
     },
+    // TODO MOVE THIS TO THE BET POST VUE PAGE IN "views"
+    async getBet(betId) {
+      this.loadedData = await (await fetch(API_URL + "/wager/" + betId)).json();
+    }
   },
 };
 </script>
 
 <template>
   <div class="w-1/3">
-    <div class="flex justify-between">
-      <p class="pr-7">
-        <span class="font-semibold">{{ theBet }}</span>
+    <!-- create link to the wager post page, then get the data on the wager -->
 
+
+    <div class="flex justify-between" @click="getBet(id)">
+      <router-link :to="`/wager/${id}`">
+        <span class="font-semibold">{{ theBet }}</span>
         <span v-if="theOdds > 0">&nbsp;+</span>
         <span v-else>&nbsp;</span>{{ theOdds }}
-      </p>
+      </router-link>
       <p class="text-right pl-7">
         <span v-if="units > 1 || units < 1">{{ units }} units</span>
         <span v-else>{{ units }} unit</span>
