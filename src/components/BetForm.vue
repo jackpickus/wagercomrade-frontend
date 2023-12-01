@@ -1,5 +1,4 @@
 <script>
-import { deleteBet, updateBet } from "../services/BetService";
 import MyBet from "./MyBet.vue";
 const API_URL = "http://localhost:8080/api/v1/wager";
 const Status = {
@@ -112,32 +111,6 @@ export default {
         this.theBet = "";
         this.theOdds = "";
         this.units = "";
-      }
-    },
-    updateBetStatus(bet, win) {
-      let index = this.myBets.indexOf(bet);
-      if (index > -1) {
-        if (win) {
-          bet.status = "WON";
-        } else {
-          bet.status = "LOST";
-        }
-        console.log(bet.status);
-        updateBet(bet.id, bet.status);
-      }
-    },
-    deleteBet(betId) {
-      const index = this.myBets.indexOf(betId);
-      console.log("This is the index: " + index);
-      if (index > -1) {
-        if (betId.status == "Pending") {
-          this.calcTotalUnitsPending;
-        } else {
-          this.calcTotalUnits;
-        }
-        this.myBets.splice(index, 1);
-        deleteBet(betId.id);
-        console.log("Successfully deleted item");
       }
     },
   },

@@ -1,6 +1,7 @@
 <script>
 import { useRoute } from "vue-router";
 import MyBet from "../components/MyBet.vue";
+import deleteBet from "../services/BetService";
 
 const API_URL = "http://localhost:8080/api/v1/wager/";
 
@@ -18,6 +19,20 @@ export default {
   methods: {
     async getBet(betId) {
       this.loadedData = await (await fetch(API_URL + betId)).json();
+    },
+    deleteWager(betId) {
+      const index = this.myBets.indexOf(betId);
+      console.log("This is the index: " + index);
+      if (index > -1) {
+        if (betId.status == "Pending") {
+          this.calcTotalUnitsPending;
+        } else {
+          this.calcTotalUnits;
+        }
+        this.myBets.splice(index, 1);
+        deleteBet(betId.id);
+        console.log("Successfully deleted item");
+      }
     },
   },
   components: { MyBet },
@@ -46,6 +61,7 @@ export default {
         Edit
       </button>
       <button
+        @click="deleteBet"
         class="md:border-2 rounded-md m-2 p-2 text-white bg-green-600 hover:bg-violet-600"
       >
         Delete
