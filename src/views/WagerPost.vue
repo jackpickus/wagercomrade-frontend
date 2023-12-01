@@ -26,16 +26,30 @@ export default {
 
 <template>
   <div>
-    <h2>Hello Wager #{{ $route.params.betId }}</h2>
+    <h2 class="text-center">Hello Wager #{{ $route.params.betId }}</h2>
+    <div class="flex justify-center">
+      <MyBet
+        :id="this.loadedData.id"
+        :theBet="this.loadedData.theBet"
+        :theOdds="this.loadedData.theOdds"
+        :units="this.loadedData.units"
+        :betStatus="this.loadedData.status"
+        :timePlaced="this.loadedData.timePlaced"
+        :toWin="this.loadedData.toWin"
+      />
+    </div>
 
-    <MyBet
-      :id="this.loadedData.id"
-      :theBet="this.loadedData.theBet"
-      :theOdds="this.loadedData.theOdds"
-      :units="this.loadedData.units"
-      :betStatus="this.loadedData.status"
-      :timePlaced="this.loadedData.timePlaced"
-      :toWin="this.loadedData.toWin"
-    />
+    <div class="p-2 flex justify-center">
+      <button
+        class="md:border-2 rounded-lg m-2 p-2 text-white bg-green-600 hover:bg-violet-600"
+      >
+        Edit
+      </button>
+      <button
+        class="md:border-2 rounded-md m-2 p-2 text-white bg-green-600 hover:bg-violet-600"
+      >
+        Delete
+      </button>
+    </div>
   </div>
 </template>
