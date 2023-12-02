@@ -4,6 +4,7 @@ import Login from "@/views/LogIn.vue";
 import AboutPage from "@/views/AboutPage.vue";
 import CalculatorPage from "@/views/CalculatorPage.vue";
 import WagerPost from "@/views/WagerPost.vue";
+import EditWagerPost from "@/views/EditWagerPost.vue";
 
 const routes = [
   { path: "/", name: "Home", component: HomePage },
@@ -11,6 +12,7 @@ const routes = [
   { path: "/login", name: "Login", component: Login },
   { path: "/calculator", name: "Calculator", component: CalculatorPage },
   { path: "/wager/:betId", name: "Wager", component: WagerPost },
+  { path: "/editWager/:betId", name: "EditWager", component: EditWagerPost },
 ];
 
 const router = createRouter({
