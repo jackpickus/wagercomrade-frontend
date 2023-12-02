@@ -1,14 +1,21 @@
 <script>
+const Status = {
+  WON: "WON",
+  LOST: "LOST",
+  PENDING: "PENDING",
+  VOID: "VOID",
+};
 export default {
   props: {
     id: Number,
     theBet: String,
     theOdds: Number,
     theUnits: Number,
-    betStatus: String,
+    theStatus: String,
   },
   data() {
     return {
+      Status,
       editStatus: false,
       newWager: "",
       newOdds: "",
@@ -20,20 +27,28 @@ export default {
 </script>
 <template>
   <div>
-    <h1>Edit Bet</h1>
     <form @submit.prevent="">
       <label>
-        <input v-model="newWager" />
+        Wager
+        <input v-model="newWager" type="text" value="{{ theBet }}" />
       </label>
       <label>
-        <input v-model="newOdds" />
+        Odds
+        <input v-model="newOdds" type="text" value="{{ theOdds }}" />
       </label>
       <label>
-        <input v-model="newUnits" />
+        Units
+        <input v-model="newUnits" type="number" value="{{ theUnits }}" />
       </label>
-      <label>
-        <input v-model="newStatus" />
-      </label>
+      <label for="status-select"> Status </label>
+      <select name="status" v-model="newStatus" value="{{ theStatus }}">
+        <!-- TODO - change value to the Status enum values -->
+        <option value="PENDING">{{ Status.PENDING }}</option>
+        <option value="WON">{{ Status.WON }}</option>
+        <option value="LOST">{{ Status.LOST }}</option>
+        <option value="VOID">{{ Status.VOID }}</option>
+      </select>
+      <button>Submit</button>
     </form>
   </div>
 </template>
