@@ -18,6 +18,11 @@ export default {
   methods: {
     async getBet(betId) {
       this.loadedData = await (await fetch(API_URL + betId)).json();
+      console.log("Got the Bet?");
+      console.log(this.loadedData.theBet);
+      console.log(this.loadedData.theOdds);
+      console.log(this.loadedData.units);
+      console.log(this.loadedData.status);
     },
   },
   components: { EditBetForm },

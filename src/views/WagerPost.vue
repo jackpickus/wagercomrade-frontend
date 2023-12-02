@@ -49,7 +49,7 @@ export default {
     </div>
 
     <div class="p-2 flex justify-center">
-      <router-link :to="`/editWager/${bet.id}`">
+      <router-link :to="`/editWager/${this.loadedData.id}`">
         <button
           class="md:border-2 rounded-lg m-2 p-2 text-white bg-green-600 hover:bg-violet-600"
         >
