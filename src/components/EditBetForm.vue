@@ -6,21 +6,15 @@ const Status = {
   VOID: "VOID",
 };
 export default {
-  props: {
-    id: Number,
-    theBet: String,
-    theOdds: Number,
-    units: Number,
-    betStatus: String,
-  },
+  props: ["id", "theBet", "theOdds", "units", "status"],
   data() {
     return {
       Status,
       editStatus: false,
-      newWager: this.theBet,
+      newBet: this.theBet,
       newOdds: this.theOdds,
       newUnits: this.units,
-      newStatus: this.betStatus,
+      newStatus: this.status,
     };
   },
 };
@@ -30,7 +24,7 @@ export default {
     <form @submit.prevent="">
       <label>
         Wager
-        <input v-model="newWager" type="text" />
+        <input v-model="newBet" type="text" />
       </label>
       <label>
         Odds
