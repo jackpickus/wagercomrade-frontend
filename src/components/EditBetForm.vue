@@ -6,7 +6,7 @@ const Status = {
   VOID: "VOID",
 };
 export default {
-  props: ["id", "theBet", "theOdds", "units", "status"],
+  props: ["id", "theBet", "theOdds", "units", "betStatus"],
   data() {
     return {
       Status,
@@ -14,7 +14,7 @@ export default {
       newBet: this.theBet,
       newOdds: this.theOdds,
       newUnits: this.units,
-      newStatus: this.status,
+      newStatus: this.betStatus,
     };
   },
 };
@@ -36,7 +36,7 @@ export default {
       </label>
       <label for="status-select"> Status </label>
 
-      <select name="status" id="status-select">
+      <select name="status" id="status-select" v-model="newStatus">
         <option value="">--Please choose an option--</option>
         <option value="WON">{{ Status.WON }}</option>
         <option value="LOST">{{ Status.LOST }}</option>
