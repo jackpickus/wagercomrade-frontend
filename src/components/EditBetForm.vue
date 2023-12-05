@@ -1,4 +1,5 @@
 <script>
+import updateBet from "@/services/BetService.js";
 const Status = {
   WON: "WON",
   LOST: "LOST",
@@ -16,6 +17,11 @@ export default {
       newUnits: this.units,
       newStatus: this.betStatus,
     };
+  },
+  methods: {
+    changeBet() {
+      updateBet(this.id);
+    },
   },
 };
 </script>
@@ -63,6 +69,7 @@ export default {
       </select>
       <button
         class="md:border-2 rounded-lg m-2 p-2 text-white bg-green-600 hover:bg-violet-600"
+        @submit="changeBet"
       >
         Submit
       </button>
