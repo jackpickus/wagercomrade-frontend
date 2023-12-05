@@ -43,6 +43,7 @@ export default {
         <input
           v-model="newUnits"
           type="number"
+          step=".01"
           class="border-2 rounded-xl border-zinc-500 px-2 focus:border-emerald-600 focus:outline-none"
         />
       </label>
