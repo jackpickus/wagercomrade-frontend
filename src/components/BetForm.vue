@@ -91,7 +91,7 @@ export default {
           toWin: this.calculatePayout(this.units, this.theOdds),
         };
 
-        fetch(API_URL, {
+        fetch(API_URL + "/new-wager", {
           method: "POST",
           headers: {
             "Content-Type": "application/json;charset=utf-8",
