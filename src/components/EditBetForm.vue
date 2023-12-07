@@ -20,7 +20,14 @@ export default {
   },
   methods: {
     changeBet() {
-      updateBet(this.id);
+      let putBet = {
+        theBet: this.newBet,
+        theOdds: this.newOdds,
+        units: this.newUnits,
+        status: this.newStatus,
+      };
+      updateBet(this.id, putBet);
+      document.location.href = "/";
     },
   },
 };
