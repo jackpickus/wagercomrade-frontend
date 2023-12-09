@@ -6,7 +6,7 @@ const password = ref("");
 </script>
 <template>
   <div class="text-center">
-    <h1 class="font-bold text-4xl mb-4">Login</h1>
+    <h1>Login</h1>
     <form>
       <div class="flex flex-col mb-4">
         <label class="uppercase"
