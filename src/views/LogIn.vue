@@ -1,8 +1,13 @@
 <script setup>
 import { ref } from "vue";
+import { useUserStore } from "../stores/UserStore";
 
 const username = ref("");
 const password = ref("");
+
+const store = useUserStore();
+
+store.logIn(username.value, password.value);
 </script>
 <template>
   <div class="text-center">
@@ -29,6 +34,7 @@ const password = ref("");
       </div>
       <button
         type="submit"
+        @click="store.logIn"
         class="mx-auto uppercase block md:border-2 rounded-lg m-2 p-2 text-white bg-green-600 hover:bg-violet-600"
       >
         Login
