@@ -20,7 +20,7 @@ export const useUserStore = defineStore("UserStore", {
       const user = await res.json();
       this.user = user;
     },
-    async signUp(username, email, password, passwordMatch) {
+    async register(username, email, password, passwordMatch) {
       const res = await fetch(
         "http://localhost:8080/api/v1/registration/register",
         {

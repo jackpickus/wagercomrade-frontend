@@ -5,6 +5,7 @@ import AboutPage from "@/views/AboutPage.vue";
 import CalculatorPage from "@/views/CalculatorPage.vue";
 import WagerPost from "@/views/WagerPost.vue";
 import EditWagerPost from "@/views/EditWagerPost.vue";
+import RegisterPage from "@/views/RegisterPage.vue";
 
 const routes = [
   { path: "/", name: "Home", component: HomePage },
@@ -13,6 +14,7 @@ const routes = [
   { path: "/calculator", name: "Calculator", component: CalculatorPage },
   { path: "/wager/:betId", name: "Wager", component: WagerPost },
   { path: "/wager/:betId/edit", name: "EditWager", component: EditWagerPost },
+  { path: "/register", name: "Register", component: RegisterPage },
 ];
 
 const router = createRouter({
