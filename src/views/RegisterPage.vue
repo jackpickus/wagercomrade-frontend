@@ -26,6 +26,8 @@ store.register(
         <input
           v-model="email"
           class="border-2 rounded-xl border-zinc-500 px-2 focus:border-emerald-600 focus:outline-none"
+          required
+          type="email"
         />
       </div>
       <div class="flex flex-col mb-4">
@@ -33,6 +35,7 @@ store.register(
         <input
           v-model="username"
           class="border-2 rounded-xl border-zinc-500 px-2 focus:border-emerald-600 focus:outline-none"
+          required
         />
       </div>
       <div class="flex flex-col mb-4">
@@ -40,6 +43,7 @@ store.register(
         <input
           v-model="username"
           class="border-2 rounded-xl border-zinc-500 px-2 focus:border-emerald-600 focus:outline-none"
+          required
         />
       </div>
       <div class="flex flex-col mb-6">
@@ -48,6 +52,7 @@ store.register(
           v-model="passwordMatch"
           type="password"
           class="border-2 rounded-xl border-zinc-500 px-2 focus:border-emerald-600 focus:outline-none"
+          required
         />
       </div>
       <button

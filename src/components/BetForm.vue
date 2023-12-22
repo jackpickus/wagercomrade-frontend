@@ -132,6 +132,7 @@ export default {
             v-model="theBet"
             type="text"
             placeholder="e.g. Bulls -5"
+            required
             class="border-2 rounded-xl border-zinc-500 px-2 focus:border-emerald-600 focus:outline-none"
           />
         </label>
@@ -141,6 +142,7 @@ export default {
             v-model="theOdds"
             type="number"
             placeholder="-110"
+            required
             class="border-2 rounded-xl border-zinc-500 px-2 focus:border-emerald-600 focus:outline-none"
           />
         </label>
@@ -150,6 +152,7 @@ export default {
             v-model="units"
             type="number"
             placeholder="1"
+            required
             class="border-2 rounded-xl border-zinc-500 px-2 focus:border-emerald-600 focus:outline-none"
           />
         </label>

@@ -19,6 +19,7 @@ store.logIn(username.value, password.value);
           <input
             v-model="username"
             class="border-2 rounded-xl border-zinc-500 px-2 focus:border-emerald-600 focus:outline-none"
+            required
           />
         </label>
       </div>
@@ -28,6 +29,7 @@ store.logIn(username.value, password.value);
           <input
             v-model="password"
             type="password"
+            required
             class="border-2 rounded-xl border-zinc-500 px-2 focus:border-emerald-600 focus:outline-none"
           />
         </label>
