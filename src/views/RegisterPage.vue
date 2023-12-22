@@ -20,8 +20,8 @@ store.register(
 <template>
   <div>
     <h1>Sign Up</h1>
-    <form class="w-full max-w-sm px-5">
-      <div class="flex flex-col mb-4">
+    <form class="flex flex-col items-center px-5">
+      <div class="flex flex-col mb-4 w-1/4">
         <label class="uppercase">Email </label>
         <input
           v-model="email"
@@ -30,7 +30,7 @@ store.register(
           type="email"
         />
       </div>
-      <div class="flex flex-col mb-4">
+      <div class="flex flex-col mb-4 w-1/4">
         <label class="uppercase">Username </label>
         <input
           v-model="username"
@@ -38,7 +38,7 @@ store.register(
           required
         />
       </div>
-      <div class="flex flex-col mb-4">
+      <div class="flex flex-col mb-4 w-1/4">
         <label class="uppercase">Password </label>
         <input
           v-model="username"
@@ -46,7 +46,7 @@ store.register(
           required
         />
       </div>
-      <div class="flex flex-col mb-6">
+      <div class="flex flex-col mb-6 w-1/4">
         <label class="uppercase"> Confirm Password </label>
         <input
           v-model="passwordMatch"
