@@ -41,7 +41,8 @@ store.register(
       <div class="flex flex-col mb-4 w-1/4">
         <label class="uppercase">Password </label>
         <input
-          v-model="username"
+          v-model="password"
+          type="password"
           class="border-2 rounded-xl border-zinc-500 px-2 focus:border-emerald-600 focus:outline-none"
           required
         />
