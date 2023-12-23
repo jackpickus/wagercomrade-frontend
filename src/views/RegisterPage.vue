@@ -6,21 +6,29 @@ const username = ref("");
 const email = ref("");
 const password = ref("");
 const passwordMatch = ref("");
+const match = ref(true);
 
 const store = useUserStore();
 
-store.register(
-  username.value,
-  email.value,
-  password.value,
-  passwordMatch.value
-);
+function confirmPasswordsAndSubmit() {
+  if (password.value == passwordMatch.value) {
+    store.register(
+      username.value,
+      email.value,
+      password.value,
+      passwordMatch.value
+    );
+    match.value = true;
+  } else {
+    match.value = !match.value;
+  }
+}
 </script>
 
 <template>
   <div>
     <h1>Sign Up</h1>
-    <form class="flex flex-col items-center px-5">
+    <form @submit.prevent="" class="flex flex-col items-center px-5">
       <div class="flex flex-col mb-4 w-1/4">
         <label class="uppercase">Email </label>
         <input
@@ -47,7 +55,7 @@ store.register(
           required
         />
       </div>
-      <div class="flex flex-col mb-6 w-1/4">
+      <div class="flex flex-col mb-4 w-1/4">
         <label class="uppercase"> Confirm Password </label>
         <input
           v-model="passwordMatch"
@@ -56,9 +64,12 @@ store.register(
           required
         />
       </div>
+      <p v-if="!match" class="text-red-600 uppercase pb-2">
+        Passwords must match
+      </p>
       <button
         type="submit"
-        @click="store.register"
+        @click="confirmPasswordsAndSubmit"
         class="mx-auto uppercase block md:border-2 rounded-lg m-2 p-2 text-white bg-green-600 hover:bg-violet-600"
       >
         Submit
