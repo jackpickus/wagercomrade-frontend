@@ -20,6 +20,8 @@ export default {
 
       loadedData: null,
       myBets: [],
+
+      statusCategory: "all",
     };
   },
   created() {
@@ -27,6 +29,17 @@ export default {
   },
   computed: {
     reversedBets() {
+      if (this.statusCategory != "all") {
+        let statusBetArr = [];
+        this.myBets.forEach((bet) => {
+          if (bet.status == this.statusCategory.toUpperCase()) {
+            statusBetArr.push(bet);
+            console.log(bet.theBet);
+            console.log(bet.status + "\n");
+          }
+        });
+        return [...statusBetArr].reverse();
+      }
       return [...this.myBets].reverse();
     },
     calcTotalUnits() {
@@ -167,6 +180,59 @@ export default {
       </div>
     </form>
     <h3 class="font-semibold text-2xl underline text-center pt-4">My Bets</h3>
+    <div class="flex justify-center">
+      <div class="px-1">
+        <input
+          type="radio"
+          id="all"
+          name="status-category"
+          value="all"
+          v-model="statusCategory"
+          checked
+        />
+        <label for="all">All Bets</label>
+      </div>
+      <div class="px-1">
+        <input
+          type="radio"
+          id="won"
+          name="status-category"
+          value="won"
+          v-model="statusCategory"
+        />
+        <label for="won">Won</label>
+      </div>
+      <div class="px-1">
+        <input
+          type="radio"
+          id="lost"
+          name="status-category"
+          value="lost"
+          v-model="statusCategory"
+        />
+        <label for="lost">Lost</label>
+      </div>
+      <div class="px-1">
+        <input
+          type="radio"
+          id="pending"
+          name="status-category"
+          value="pending"
+          v-model="statusCategory"
+        />
+        <label for="pending">Pending</label>
+      </div>
+      <div class="px-1">
+        <input
+          type="radio"
+          id="void"
+          name="status-category"
+          value="void"
+          v-model="statusCategory"
+        />
+        <label for="void">Void</label>
+      </div>
+    </div>
     <div class="text-center p-2">
       <div class="inline-block text-left">
         <h6
