@@ -51,3 +51,16 @@ export function deleteBet(betId) {
       console.log("Error on DELETE:", error);
     });
 }
+
+export function getBetCategory(category) {
+  const url = `${API_URL}/wagerlist/${category}`;
+  fetch(url, {
+    headers: {
+      "Content-Type": "application/json;charset=utf-8",
+    },
+  })
+    .then((response) => response.json())
+    .catch((error) => {
+      console.log("Error GET category: ", error);
+    });
+}
