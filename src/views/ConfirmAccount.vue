@@ -1,7 +1,24 @@
 <script setup>
 import { ref } from "vue";
+const API_URL = "http://localhost:8080/api/v1/register/confirm?token=";
 
 const confirmAcctCode = ref("");
+
+function sendConfirmation() {
+  fetch(API_URL + confirmAcctCode.value, {
+    method: "GET",
+    headers: {
+      "Content-Type": "application/json;charset=uft-8",
+    },
+  })
+    .then((response) => {
+      response.json();
+      console.log("success confirming sign up");
+    })
+    .catch((error) => {
+      console.log("Error confirming token: " + confirmAcctCode.value, error);
+    });
+}
 </script>
 
 <template>
@@ -21,6 +38,13 @@ const confirmAcctCode = ref("");
           class="border-2 rounded-xl border-zinc-500 px-2 focus:border-emerald-600 focus:outline-none"
         />
       </div>
+      <button
+        type="submit"
+        @click="sendConfirmation"
+        class="mx-auto uppercase block md:border-2 rounded-lg m-2 p-2 text-white bg-green-600 hover:bg-violet-600"
+      >
+        Submit
+      </button>
     </form>
   </div>
 </template>
