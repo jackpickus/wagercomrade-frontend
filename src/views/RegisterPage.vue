@@ -19,6 +19,7 @@ function confirmPasswordsAndSubmit() {
       passwordMatch.value
     );
     match.value = true;
+    document.location.href = "/register/confirm";
   } else {
     match.value = !match.value;
   }
