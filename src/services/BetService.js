@@ -13,7 +13,7 @@ export default function createNewBet(data) {
       console.log("Success:", data);
     })
     .catch((error) => {
-      console.log("Error: on POST:", error);
+      console.log("Error on POST:", error);
     });
 }
 
