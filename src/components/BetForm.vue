@@ -76,21 +76,6 @@ export default {
       }
       this.myBets.sort((a, b) => parseFloat(a.id) - parseFloat(b.id));
     },
-    calculatePayout(units, odds) {
-      let myUnits = units;
-      let myOdds = odds;
-      let amount = 0;
-      if (myOdds >= 100) {
-        // wager was on underdog
-        amount = myUnits * (myOdds / 100);
-      } else {
-        // wager was negative odds, chose favorite
-        amount = myUnits * (100 / (myOdds * -1));
-      }
-      let roundedAmount = Math.round(amount * 100) / 100;
-      let potentialWinnings = roundedAmount;
-      return potentialWinnings;
-    },
     placeBet() {
       if (this.units >= 0.1) {
         let d = new Date();
