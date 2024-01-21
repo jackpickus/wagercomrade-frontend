@@ -78,15 +78,11 @@ export default {
     },
     placeBet() {
       if (this.units >= 0.1) {
-        let d = new Date();
-
         let newBet = {
           theBet: this.theBet,
           theOdds: this.theOdds,
           units: this.units,
           status: this.status,
-          timePlaced: d,
-          toWin: this.calculatePayout(this.units, this.theOdds),
         };
 
         fetch(API_URL + "/new-wager", {
@@ -100,6 +96,7 @@ export default {
           .then((data) => {
             console.log("Success:", data);
             newBet.id = data.wagerIdNumber;
+            newBet.timePlaced = data.betTimeStamp;
             this.myBets.push(newBet);
           })
           .catch((error) => {
