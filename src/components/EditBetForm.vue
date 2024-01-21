@@ -75,8 +75,8 @@ export default {
         <option value="VOID">{{ Status.VOID }}</option>
       </select>
       <button
+        @click="changeBet"
         class="md:border-2 rounded-lg m-2 p-2 text-white bg-green-600 hover:bg-violet-600"
-        @submit="changeBet"
       >
         Submit
       </button>
