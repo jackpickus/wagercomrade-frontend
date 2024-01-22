@@ -1,7 +1,6 @@
 <script>
 import { useRoute } from "vue-router";
 import MyBet from "../components/MyBet.vue";
-import deleteBet from "../services/BetService";
 
 const API_URL = "http://localhost:8080/api/v1/wager/";
 
@@ -24,7 +23,15 @@ export default {
       let confirmDelete = confirm("Are you sure you want to delete wager?");
       if (confirmDelete) {
         console.log("The bet will be deleted: " + betId);
-        deleteBet(betId.id);
+        const url = API_URL + betId;
+        fetch(url, {
+          method: "DELETE",
+          headers: {
+            "Content-Type": "application/json;charset=utf-8",
+          },
+        }).catch((error) => {
+          console.log("Error on DELETE:", error);
+        });
         document.location.href = "/";
       }
     },

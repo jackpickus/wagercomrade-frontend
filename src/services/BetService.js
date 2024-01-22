@@ -17,23 +17,6 @@ export default function createNewBet(data) {
     });
 }
 
-export function deleteBet(betId) {
-  const url = `${API_URL}/${betId}`;
-  fetch(url, {
-    method: "DELETE",
-    headers: {
-      "Content-Type": "application/json;charset=utf-8",
-    },
-  })
-    .then((response) => response.json())
-    .then((data) => {
-      console.log("Successfully deleted bet:", data);
-    })
-    .catch((error) => {
-      console.log("Error on DELETE:", error);
-    });
-}
-
 export function getBetCategory(category) {
   const url = `${API_URL}/wagerlist/${category}`;
   fetch(url, {
