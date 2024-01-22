@@ -17,24 +17,6 @@ export default function createNewBet(data) {
     });
 }
 
-export function updateBet(betId, data) {
-  const url = `${API_URL}/${betId}`;
-  fetch(url, {
-    method: "PUT",
-    headers: {
-      "Content-Type": "application/json;charset=utf-8",
-    },
-    body: JSON.stringify(data),
-  })
-    .then((response) => response.json())
-    .then((data) => {
-      console.log("Successfully updated bet: ", data);
-    })
-    .catch((error) => {
-      console.log("Error on PUT: ", error);
-    });
-}
-
 export function deleteBet(betId) {
   const url = `${API_URL}/${betId}`;
   fetch(url, {
