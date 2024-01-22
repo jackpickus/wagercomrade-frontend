@@ -45,6 +45,7 @@ export default {
         :betStatus="this.loadedData.status"
         :timePlaced="this.loadedData.timePlaced"
         :toWin="this.loadedData.toWin"
+        :category="this.loadedData.category"
       />
     </div>
 

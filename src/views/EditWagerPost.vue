@@ -42,6 +42,7 @@ export default {
           :theOdds="data.theOdds"
           :units="data.units"
           :betStatus="data.status"
+          :category="data.category"
         />
       </template>
     </div>

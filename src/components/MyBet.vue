@@ -9,6 +9,7 @@ export default {
     betStatus: String,
     timePlaced: String,
     toWin: Number,
+    category: String,
   },
   data() {
     return {
@@ -50,20 +51,13 @@ export default {
         <span class="text-emerald-600">{{ betStatus }} +{{ toWin }}U</span>
       </p>
       <div v-if="betStatus == 'PENDING'" class="text-amber-600">
-        <!-- TODO DELETE TO WIN STUFF -->
-        <!-- <p v-if="toWin > 1 || toWin < 1">To Win: {{ toWin }} units</p>
-      <p v-else>To Win: {{ toWin }} unit</p> -->
         {{ betStatus }}
-        <!-- <span :class="pendingClass">{{ betStatus }}</span>
-        <p>
-          <span :class="lostClass">CATION!</span> Once you change the status of
-          the bet you cannot change it
-        </p> -->
       </div>
       <div v-if="betStatus == 'VOID'">Status: {{ betStatus }}</div>
       <p class="text-right">
         {{ format(parseISO(timePlaced), "MMM d, yyyy h:mm aa") }}
       </p>
     </div>
+    <p class="block">Category: {{ category }}</p>
   </div>
 </template>

@@ -251,21 +251,9 @@ export default {
               :betStatus="bet.status"
               :timePlaced="bet.timePlaced"
               :toWin="bet.toWin"
+              :category="bet.category"
             />
           </router-link>
-          <!-- TODO CREATE EDIT BET PAGE -->
-          <!-- <button type="button" @click="deleteBet(bet)">Edit Bet</button> -->
-          <!-- TODO: Make PUT call to update bet status -->
-          <!-- <div v-if="bet.status == 'PENDING'">
-          Update Status:
-          <button type="button" @click="updateBetStatus(bet, true)">
-            Won?
-          </button>
-          <button type="button" @click="updateBetStatus(bet, false)">
-            Lost?
-          </button>
-          <button type="button" @click="bet.status = 'Void'">Void?</button>
-        </div> -->
         </li>
       </ul>
     </div>
