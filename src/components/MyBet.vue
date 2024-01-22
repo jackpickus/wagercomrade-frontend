@@ -18,12 +18,17 @@ export default {
       pendingClass: "pendingTextClass",
       format,
       parseISO,
+      betDateConvert: "",
     };
   },
-  methods: {
-    makeDate(betDate) {
-      let myDate = new Date(betDate);
-      return myDate;
+  computed: {
+    makeDateConversion() {
+      const localTimeZone = Intl.DateTimeFormat().resolvedOptions().timeZone;
+      const localDateTime = new Date(this.timePlaced).toLocaleString("en-US", {
+        timeZone: localTimeZone,
+      });
+      return localDateTime;
+      // return format(parseISO(localDateTime), "MMM d, yyyy h:mm aa");
     },
   },
 };
@@ -55,7 +60,8 @@ export default {
       </div>
       <div v-if="betStatus == 'VOID'">Status: {{ betStatus }}</div>
       <p class="text-right">
-        {{ format(parseISO(timePlaced), "MMM d, yyyy h:mm aa") }}
+        <!-- {{ format(parseISO(timePlaced), "MMM d, yyyy h:mm aa") }} -->
+        {{ makeDateConversion }}
       </p>
     </div>
     <p class="block">Category: {{ category }}</p>
