@@ -57,7 +57,7 @@ export default {
       <div v-if="betStatus == 'PENDING'" class="text-amber-600">
         {{ betStatus }}
       </div>
-      <div v-if="betStatus == 'VOID'">Status: {{ betStatus }}</div>
+      <div v-if="betStatus == 'VOID'">{{ betStatus }}</div>
       <p class="text-right">
         {{ makeDateConversion }}
       </p>
