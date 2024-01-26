@@ -29,8 +29,8 @@ export default {
 
 <template>
   <div>
-    <h2 class="text-center">Edit Wager #{{ $route.params.betId }}</h2>
-    <div class="flex justify-center">
+    <h1>Edit Wager #{{ $route.params.betId }}</h1>
+    <div class="flex flex-col">
       <template v-if="loading">
         <p>Loading...</p>
       </template>
