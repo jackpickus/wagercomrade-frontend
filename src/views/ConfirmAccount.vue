@@ -1,23 +1,21 @@
 <script setup>
 import { ref } from "vue";
-const API_URL = "http://localhost:8080/api/v1/register/confirm?token=";
 
 const confirmAcctCode = ref("");
 
 function sendConfirmation() {
-  fetch(API_URL + confirmAcctCode.value, {
-    method: "GET",
-    headers: {
-      "Content-Type": "application/json;charset=uft-8",
-    },
-  })
-    .then((response) => {
-      response.json();
-      console.log("success confirming sign up");
-    })
-    .catch((error) => {
-      console.log("Error confirming token: " + confirmAcctCode.value, error);
-    });
+  fetch(
+    "http://localhost:8080/api/v1/registration/confirm?token=" +
+      confirmAcctCode.value,
+    {
+      method: "GET",
+      headers: {
+        "Content-Type": "application/json;charset=uft-8",
+      },
+    }
+  ).catch((error) => {
+    console.log("Error confirming token: " + confirmAcctCode.value, error);
+  });
 }
 </script>
 
@@ -29,8 +27,8 @@ function sendConfirmation() {
       Please enter the code below. It will expire in
       <span class="font-semibold">15 minutes.</span>
     </p>
-    <form class="flex flex-col items-center px-5">
-      <div class="flex flex-col mb-4 w-1/6">
+    <form @submit.prevent="" class="flex flex-col items-center px-5">
+      <div class="flex flex-col mb-4 w-1/4">
         <label class="uppercase">SignUp Code</label>
         <input
           v-model="confirmAcctCode"
