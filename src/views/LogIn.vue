@@ -7,7 +7,9 @@ const password = ref("");
 
 const store = useUserStore();
 
-store.logIn(username.value, password.value);
+function logInUser() {
+  store.logIn(username.value, password.value);
+}
 </script>
 <template>
   <div class="text-center">
@@ -36,7 +38,7 @@ store.logIn(username.value, password.value);
       </div>
       <button
         type="submit"
-        @click="store.logIn"
+        @click="logInUser"
         class="mx-auto uppercase block md:border-2 rounded-lg m-2 p-2 text-white bg-green-600 hover:bg-violet-600"
       >
         Login
