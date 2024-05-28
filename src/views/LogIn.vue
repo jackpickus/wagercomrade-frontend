@@ -7,8 +7,11 @@ const password = ref("");
 
 const store = useUserStore();
 
-function logInUser() {
+async function logInUser(e) {
   store.logIn(username.value, password.value);
+  console.log("This is the user: " + store.user.username);
+  console.log("This is the token: " + store.user.token);
+  e.preventDefault();
 }
 </script>
 <template>
