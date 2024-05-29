@@ -7,17 +7,14 @@ const password = ref("");
 
 const store = useUserStore();
 
-async function logInUser(e) {
-  store.logIn(username.value, password.value);
-  console.log("This is the user: " + store.user.username);
-  console.log("This is the token: " + store.user.token);
-  e.preventDefault();
+async function logInUser() {
+  await store.logIn(username.value, password.value);
 }
 </script>
 <template>
   <div class="text-center">
     <h1>Login</h1>
-    <form>
+    <form @submit.prevent="logInUser">
       <div class="flex flex-col mb-4">
         <label class="uppercase"
           >Username
