@@ -1,5 +1,6 @@
 <script>
 import MyBet from "./MyBet.vue";
+import { useUserStore } from "../stores/UserStore";
 const API_URL = "http://localhost:8080/api/v1/wager";
 const Status = {
   WON: "WON",
@@ -68,7 +69,15 @@ export default {
   },
   methods: {
     async fetchData() {
-      this.loadedData = await (await fetch(API_URL + "/wagerlist")).json();
+      const store = useUserStore();
+      const token = store.user.token;
+      this.loadedData = await fetch(API_URL + "/wagerlist", {
+        method: "GET",
+        headers: {
+          "Content-Type": "application/json;charset=utf-8",
+          Authorization: "Bearer " + token,
+        },
+      });
       let x = 0;
       while (x < this.loadedData.length) {
         this.myBets.push(this.loadedData[x]);
